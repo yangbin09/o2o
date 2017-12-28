@@ -2,8 +2,8 @@ package com.imooc.o2o.enums;
 
 /**
  * 店铺枚举类
- * 
- * @author Administrator
+ * 处理店铺状态
+ * @author 
  *
  */
 public enum ShopStateEnum {
