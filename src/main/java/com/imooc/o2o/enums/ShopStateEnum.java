@@ -1,11 +1,10 @@
 package com.imooc.o2o.enums;
 
-/**
- * 店铺枚举类
- * 处理店铺状态
- * @author 
- *
- */
+/** 
+* @author 作者 E-mail: 百年叔叔 1692207904@qq.com
+* @version 创建时间：2017年12月29日 上午1:49:53 
+* 类说明 ：新增店铺的枚举类
+*/
 public enum ShopStateEnum {
 	CHECK(0, "审核中"), OFFLINE(-1, "非法店铺"), SUCCESS(1, "操作成功"), PASS(2, "通过认证"), INNER_ERROR(-1001,
 			"内部系统错误"), NULL_SHOPID(-1002, "Shopid为空");
