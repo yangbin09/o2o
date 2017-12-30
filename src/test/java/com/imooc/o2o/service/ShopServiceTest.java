@@ -3,6 +3,9 @@ package com.imooc.o2o.service;
 import static org.junit.Assert.*;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.Date;
 
 import org.junit.Test;
@@ -26,7 +29,7 @@ public class ShopServiceTest extends BaseTest {
 	private ShopService shopService;
     
 	@Test
-	public void testAddShop(){
+	public void testAddShop() throws Exception{
 		Shop shop = new Shop();
 		PersonInfo owner = new PersonInfo();
 		Area area = new Area();
@@ -47,8 +50,8 @@ public class ShopServiceTest extends BaseTest {
 		shop.setEnableStatus(ShopStateEnum.CHECK.getState());
 		shop.setAdvice("审核中");
 		File shopImg=new File("D:\\img\\xiaohuang.jpg");
-		
-		ShopExecution se = shopService.addShop(shop, shopImg);
+		InputStream is=new FileInputStream(shopImg);
+		ShopExecution se = shopService.addShop(shop, is,shopImg.getName());
 		
 		assertEquals(ShopStateEnum.CHECK.getState(),se.getState());
 	}

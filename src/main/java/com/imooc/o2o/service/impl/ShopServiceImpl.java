@@ -1,6 +1,7 @@
 package com.imooc.o2o.service.impl;
 
 import java.io.File;
+import java.io.InputStream;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,9 +10,11 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.imooc.o2o.dao.ShopDao;
 import com.imooc.o2o.dto.ShopExecution;
+import com.imooc.o2o.entity.MistakeLog;
 import com.imooc.o2o.entity.Shop;
 import com.imooc.o2o.enums.ShopStateEnum;
 import com.imooc.o2o.exceptions.ShopOperationException;
+import com.imooc.o2o.service.MistakeLogService;
 import com.imooc.o2o.service.ShopService;
 import com.imooc.o2o.util.ImageUtil;
 import com.imooc.o2o.util.PathUtil;
@@ -26,9 +29,12 @@ public class ShopServiceImpl implements ShopService {
 	@Autowired
 	private ShopDao shopdao;
 
+	@Autowired
+	private MistakeLogService mistakeLogService;
+
 	@Override
 	@Transactional
-	public ShopExecution addShop(Shop shop, File shopImg) {
+	public ShopExecution addShop(Shop shop, InputStream shopImgInputStream,String fileName) {
 		// 空值判断
 		if (shop == null) {
 			return new ShopExecution(ShopStateEnum.NULL_SHOP);
@@ -41,13 +47,13 @@ public class ShopServiceImpl implements ShopService {
 			int effectedNum = shopdao.insertShop(shop);
 
 			if (effectedNum <= 0) {
+				addshopmistakeLog("店铺创建失败 ");
 				throw new ShopOperationException("店铺创建失败 ");
 			} else {
-				if (shopImg != null) {
+				if (shopImgInputStream != null) {
 					// 存储图片
-
 					try {
-						addShopImg(shop, shopImg);
+						addShopImg(shop, shopImgInputStream,fileName);
 					} catch (Exception e) {
 						throw new ShopOperationException("addShopImg error:" + e.getMessage());
 					}
@@ -66,14 +72,27 @@ public class ShopServiceImpl implements ShopService {
 		return new ShopExecution(ShopStateEnum.CHECK, shop);
 	}
 
-	private void addShopImg(Shop shop, File shopImg) {
+	private void addShopImg(Shop shop, InputStream shopinputStream,String fileName) {
 		// 获取shop图片的相对值路径
 		String dest = PathUtil.getShopImagePath(shop.getShopId());
-		/*
-		 * String shopImgAddr = ImageUtil.generateThumbnail(shopImgInputStream,
-		 * fileName, dest);
-		 *  shop.setShopImg(shopImgAddr);
-		 */
+		
+		 String shopImgAddr = ImageUtil.generateThumbnail(shopinputStream,fileName, dest); 
+		 shop.setShopImg(shopImgAddr);
 	}
 
+	/**
+	 * 如果发生错误记录错误原因
+	 * 
+	 * @param string
+	 */
+	private void addshopmistakeLog(String string) {
+		MistakeLog mistakeLog = new MistakeLog();
+		mistakeLog.setCreateTime(new Date());
+		mistakeLog.setMistakeCause(string);
+		mistakeLog.setRamarks("不知道");
+		mistakeLog.setTableName("tb_shop");
+
+		mistakeLogService.addMistakeLog(mistakeLog);
+
+	}
 }

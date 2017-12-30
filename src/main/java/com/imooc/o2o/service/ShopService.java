@@ -1,6 +1,7 @@
 package com.imooc.o2o.service;
 
 import java.io.File;
+import java.io.InputStream;
 
 import org.springframework.stereotype.Service;
 
@@ -14,5 +15,5 @@ import com.imooc.o2o.entity.Shop;
 
 public interface ShopService {
 
-	ShopExecution addShop(Shop shop,File shopImg);
+	ShopExecution addShop(Shop shop,InputStream shopinputStream,String fileName);
 }
