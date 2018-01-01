@@ -55,11 +55,13 @@ public class ShopServiceImpl implements ShopService {
 					try {
 						addShopImg(shop, shopImgInputStream,fileName);
 					} catch (Exception e) {
+						addshopmistakeLog("addShopImg error");
 						throw new ShopOperationException("addShopImg error:" + e.getMessage());
 					}
 					// 更新店铺的图片地址
 					effectedNum = shopdao.updateShop(shop);
 					if (effectedNum <= 0) {
+						addshopmistakeLog("更新图片地址失败！ ");
 						throw new ShopOperationException("更新图片地址失败！");
 					}
 				}
