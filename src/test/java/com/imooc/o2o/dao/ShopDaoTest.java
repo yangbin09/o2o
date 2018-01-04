@@ -1,6 +1,5 @@
 package com.imooc.o2o.dao;
 
-import static org.junit.Assert.assertEquals;
 
 import java.util.Date;
 
@@ -17,6 +16,15 @@ import com.imooc.o2o.entity.ShopCategory;
 public class ShopDaoTest extends BaseTest {
 	@Autowired
 	private ShopDao shopDao;
+	
+	@Test
+	public void testQueryByShopId(){
+		long shopId=73L;
+		Shop shop = shopDao.queryByShopId(shopId);
+		System.out.println("Id: "+shop.getArea().getAreaId());
+		System.out.println("区域: "+shop.getArea().getAreaName());
+		System.out.println(shop.toString());
+	}
 
 	@Test
 	@Ignore
@@ -47,6 +55,7 @@ public class ShopDaoTest extends BaseTest {
 	}
 
 	@Test
+	@Ignore
 	public void testUpdateShop() {
 		Shop shop = new Shop();
 		shop.setShopId(39L);
