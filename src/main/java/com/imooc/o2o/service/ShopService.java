@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.imooc.o2o.dto.ShopExecution;
 import com.imooc.o2o.entity.Shop;
+import com.imooc.o2o.exceptions.ShopOperationException;
 
 /**
  * @author 作者 E-mail: 百年叔叔 1692207904@qq.com
@@ -14,6 +15,31 @@ import com.imooc.o2o.entity.Shop;
  */
 
 public interface ShopService {
+	/**
+	 * 通过店铺Id获取店铺信息
+	 * 
+	 * @param shopId
+	 * @return
+	 */
+	Shop getByShopId(long shopId);
 
-	ShopExecution addShop(Shop shop,InputStream shopinputStream,String fileName);
+	/**
+	 * 更新店铺信息
+	 * 
+	 * @param shop
+	 * @param shopinputStream
+	 * @param fileName
+	 * @return
+	 */
+	ShopExecution modifyShop(Shop shop, InputStream shopinputStream, String fileName) throws ShopOperationException;
+
+	/**
+	 * 注册店铺信息，包括图片处理
+	 * 
+	 * @param shop
+	 * @param shopinputStream
+	 * @param fileName
+	 * @return
+	 */
+	ShopExecution addShop(Shop shop, InputStream shopinputStream, String fileName) throws ShopOperationException;;
 }
