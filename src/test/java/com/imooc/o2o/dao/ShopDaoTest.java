@@ -2,6 +2,7 @@ package com.imooc.o2o.dao;
 
 
 import java.util.Date;
+import java.util.List;
 
 import org.junit.Ignore;
 import org.junit.Test;
@@ -18,6 +19,20 @@ public class ShopDaoTest extends BaseTest {
 	private ShopDao shopDao;
 	
 	@Test
+	public void testQueryShopList(){
+		Shop shopCondition=new Shop();
+		PersonInfo owner =new PersonInfo(); 
+		/*owner.setUserId(1L);
+		shopCondition.setOwner(owner);*/
+		shopCondition.setShopName("0");
+		int count = shopDao.queryByShopCount(shopCondition);
+		System.out.println(count);
+		List<Shop> queryShopList = shopDao.queryShopList(shopCondition, 0, 5);
+		System.out.println(queryShopList);
+	}
+	
+	@Test
+	@Ignore
 	public void testQueryByShopId(){
 		long shopId=73L;
 		Shop shop = shopDao.queryByShopId(shopId);
