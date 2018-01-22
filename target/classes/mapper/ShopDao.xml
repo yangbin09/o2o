@@ -126,7 +126,7 @@
 		</where>
 	</select>
 
-	<select id="queryByShopId " resultMap="shopMap" parameterType="Long">
+	<select id="queryByShopId" resultMap="shopMap" parameterType="Long">
 		SELECT
 		s.shop_id,
 		s.shop_name,

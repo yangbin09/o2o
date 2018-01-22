@@ -19,6 +19,7 @@ public class ShopDaoTest extends BaseTest {
 	private ShopDao shopDao;
 	
 	@Test
+	@Ignore
 	public void testQueryShopList(){
 		Shop shopCondition=new Shop();
 		PersonInfo owner =new PersonInfo(); 
@@ -81,5 +82,9 @@ public class ShopDaoTest extends BaseTest {
 		int eddectedNum = shopDao.updateShop(shop);
 
 	}
-
+	@Test
+	public void testid(){
+		Shop id = shopDao.queryByShopId(28);
+		System.out.println(id);
+	}
 }
