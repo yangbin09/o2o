@@ -12,6 +12,10 @@ import com.imooc.o2o.entity.ShopCategory;
  */
 
 public interface ShopCategoryDao {
-
+	/**
+	 * test
+	 * @param shopCategoryCondition  传入店铺实体
+	 * @return 返回TEST
+	 */
 	List<ShopCategory> queryShopCategory(@Param("shopCategoryCondition")ShopCategory shopCategoryCondition);
 }

@@ -9,15 +9,25 @@ import java.util.Date;
  *
  */
 public class Area {
-	//ID
+	/**
+	 * ID
+	 */
 	private Integer areaId;
-	//名称
+	/**
+	 * 名称
+	 */
 	private String areaName;
-	//权重
+	/**
+	 * 权重
+	 */
 	private Integer priority;
-    //创建时间
+	/**
+	 * 创建时间
+	 */
 	private Date createTime;
-    //更新时间
+	/**
+	 * 更新时间
+	 */
 	private Date lastEditTime;
 
 	public Integer getAreaId() {

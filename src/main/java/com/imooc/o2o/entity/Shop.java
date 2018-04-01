@@ -7,33 +7,61 @@ import java.util.Date;
  *
  */
 public class Shop {
-	//店铺ID
+	/**
+	 * 店铺ID
+	 */
 	private Long shopId;
-	//店铺名字
+	/**
+	 * 店铺名字
+	 */
 	private String shopName;
-	//店铺描述
+	/**
+	 * 店铺描述
+	 */
 	private String shopDesc;
-	//具体的地址
+	/**
+	 * 具体的地址
+	 */
 	private String shopAddr;
-	//联系方式
+	/**
+	 * 联系方式
+	 */
 	private String phone;
-	//店铺缩略图片地址
+	/**
+	 * 店铺缩略图片地址
+	 */
 	private String shopImg;
-	//店铺的权重
+	/**
+	 * 店铺的权重
+	 */
 	private Integer priority;
-	//创建时间
+	/**
+	 * 创建时间
+	 */
 	private Date createTime;
-	//修改时间
+	/**
+	 * 修改时间
+	 */
 	private Date lastEditTime;
-	// -1.不可用 0.审核中 1.可用
+	/**
+	 * -1.不可用 0.审核中 1.可用
+ 	 */
 	private Integer enableStatus;
-	// 超级管理员给店家的提醒
+	/**
+	 * 超级管理员给店家的提醒
+ 	 */
 	private String advice;
-	//区域标识属于哪个区域
+	/**
+	 * 区域标识属于哪个区域
+	 */
 	private Area area;
-	//用户标识是谁创建的
+	/**
+	 * 用户标识是谁创建的
+	 */
 	private PersonInfo owner;
-	//店铺类别
+	/**
+	 * 店铺类别
+	 */
 	private ShopCategory shopCategory;
 
 	public Long getShopId() {

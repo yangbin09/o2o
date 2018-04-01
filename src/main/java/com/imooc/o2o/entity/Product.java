@@ -4,31 +4,57 @@ import java.util.Date;
 import java.util.List;
 
 public class Product {
-	//商品id
+	/**
+	 * 商品id
+	 */
 	private Long productId;
-	//商品名字
+	/**
+	 * 商品名字
+	 */
 	private String productName;
-	//商品描述
+	/**
+	 * 商品描述
+	 */
 	private String productDesc;
-	// 简略图
+	/**
+	 * 简略图
+	 */
 	private String imgAddr;
-	//原价
+	/**
+	 * 原价
+	 */
 	private String normalPrice;
-	//折扣价
+	/**
+	 * 折扣价
+	 */
 	private String promotionPrice;
-	//显示权重
+	/**
+	 * 显示权重
+	 */
 	private Integer priority;
-	//创建时间
+	/**
+	 * 创建时间
+	 */
 	private Date createTime;
-	//修改时间
+	/**
+	 * 修改时间
+	 */
 	private Date lastEditTime;
-	//0.下架 1.在前端展示系统展示
+	/**
+	 *	0.下架 1.在前端展示系统展示
+	 */
 	private Integer enableStatus;
-    //商品详情图片列表
+	/**
+	 * 商品详情图片列表
+	 */
 	private List<ProductImg> productImgList;
-	//商品类别
+	/**
+	 * 	商品类别
+	 */
 	private ProductCategory productCategory;
-	//商品对应的店铺
+	/**
+	 * 商品对应的店铺
+	 */
 	private Shop shop;
 
 	public Long getProductId() {

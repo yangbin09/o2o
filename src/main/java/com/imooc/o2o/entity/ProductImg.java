@@ -7,17 +7,29 @@ import java.util.Date;
  *
  */
 public class ProductImg {
-	//图片Id
+	/**
+	 * 图片Id
+	 */
 	private Long productImgId;
-	//图片地址
+	/**
+	 * 图片地址
+	 */
 	private String imgAddr;
-	//图片的说明
+	/**
+	 * 图片的说明
+	 */
 	private String imgDesc;
-	//图片的权重
+	/**
+	 * 图片的权重
+	 */
 	private Integer priority;
-    //创建时间
+	/**
+	 * 创建时间
+	 */
 	private Date createTime;
-	//属于哪个商品
+	/**
+	 * 属于哪个商品
+	 */
 	private Long productId;
 
 	public Long getProductImgId() {

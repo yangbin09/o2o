@@ -11,8 +11,8 @@ import com.imooc.o2o.entity.Shop;
 public interface MistakeLogDao {
 	/**
 	 * 新增错误信息
-	 * @param mistakeLog
-	 * @return
+	 * @param mistakeLog 错误信息的类
+	 * @return 返回成功或者失败
 	 */
 	int inserteLog(MistakeLog mistakeLog);
 }

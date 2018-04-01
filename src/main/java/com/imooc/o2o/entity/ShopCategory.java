@@ -7,21 +7,37 @@ import java.util.Date;
  *
  */
 public class ShopCategory {
-	//id
+	/**
+	 * id
+	 */
 	private Long shopCategoryId;
-	//店铺类别名字
+	/**
+	 * 店铺类别名字
+	 */
 	private String shopCategoryName;
-	//店铺类别描述
+	/**
+	 * 店铺类别描述
+	 */
 	private String shopCategoryDesc;
-	//图片链接地址
+	/**
+	 * 图片链接地址
+	 */
 	private String shopCategoryImg;
-	//权重
+	/**
+	 * 权重
+	 */
 	private Integer priority;
-	//创建时间
+	/**
+	 * 创建时间
+	 */
 	private Date createTime;
-	//修改时间
+	/**
+	 * 修改时间
+	 */
 	private Date lastEditTime;
-	//上级ID
+	/**
+	 * 上级ID
+	 */
 	private ShopCategory parent;
 
 	public Long getShopCategoryId() {

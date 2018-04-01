@@ -7,15 +7,25 @@ import java.util.Date;
  *
  */
 public class ProductCategory {
-	//商品的ID
+	/**
+	 * 商品的ID
+	 */
 	private Long productCategoryId;
-	//店铺ID
+	/**
+	 * 店铺ID
+	 */
 	private Long shopId;
-	//商品类别的名称
+	/**
+	 * 商品类别的名称
+	 */
 	private String productCategoryName;
-	//权重
+	/**
+	 * 权重
+	 */
 	private Integer priority;
-	//创建时间
+	/**
+	 * 创建时间
+	 */
 	private Date createTime;
 
 	public Long getProductCategoryId() {

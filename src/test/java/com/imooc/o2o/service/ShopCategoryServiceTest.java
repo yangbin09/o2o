@@ -29,6 +29,6 @@ public class ShopCategoryServiceTest extends BaseTest {
 		parentCategory.setShopCategoryId(28L);
 		testCategory.setParent(parentCategory);
 		List<ShopCategory> ShopCategoryList = shopCategoryService.getShopCategoryList(testCategory);
-		System.out.println(ShopCategoryList.get(0).getShopCategoryName());
+		System.out.println(ShopCategoryList.get(1).getShopCategoryName());
 	}
 }

@@ -8,17 +8,29 @@ import java.util.Date;
  *
  */
 public class LoaclAuth {
-	//ID
+	/**
+	 * ID
+	 */
 	private Long localAuthId;
-	//用户名
+	/**
+	 * 用户名
+	 */
 	private String username;
-	//密码
+	/**
+	 * 密码
+	 */
 	private String password;
-	//创建时间
+	/**
+	 * 创建时间
+	 */
 	private Date creteTime;
-	//修改时间
+	/**
+	 * 修改时间
+	 */
 	private Date lastEditTime;
-	//用户的实体类
+	/**
+	 * 用户的实体类
+	 */
 	private PersonInfo personInfo;
 	public Long getLocalAuthId() {
 		return localAuthId;

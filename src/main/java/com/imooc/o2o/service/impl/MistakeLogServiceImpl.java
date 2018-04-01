@@ -7,6 +7,11 @@ import org.springframework.stereotype.Service;
 import com.imooc.o2o.dao.MistakeLogDao;
 import com.imooc.o2o.entity.MistakeLog;
 import com.imooc.o2o.service.MistakeLogService;
+
+/**
+ * @author 阳斌
+ * @version 2018/4/1
+ */
 @Service
 public class MistakeLogServiceImpl implements MistakeLogService{
 	@Autowired

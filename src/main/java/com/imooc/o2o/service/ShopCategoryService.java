@@ -12,5 +12,10 @@ import com.imooc.o2o.entity.ShopCategory;
 */
 
 public interface ShopCategoryService {
+	/**
+	 * 获取店铺类别
+	 * @param shopCategoryCondition
+	 * @return
+	 */
 	List<ShopCategory> getShopCategoryList(ShopCategory shopCategoryCondition);
 }

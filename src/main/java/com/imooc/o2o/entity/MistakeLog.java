@@ -8,16 +8,27 @@ import java.util.Date;
  */
 
 public class MistakeLog {
-	// ID
+	/**
+	 * ID
+	 */
 	private Integer MistakeLogId;
-	// 创建时间
+    /**
+     *   创建时间
+     */
 	private Date createTime;
-	// 发生错误的表名
+    /**
+     * 发生错误的表名
+      */
 	private String tableName;
-	// 错误的原因
+    /**
+     *    错误的原因
+     */
 	private String mistakeCause;
-	// 记录
+    /**
+     *  记录
+     */
 	private String ramarks;
+
 
 	public Integer getAreaId() {
 		return MistakeLogId;

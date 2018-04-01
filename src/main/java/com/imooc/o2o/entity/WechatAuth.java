@@ -8,13 +8,21 @@ import java.util.Date;
  *
  */
 public class WechatAuth {
-	//ID
+	/**
+	 * ID
+	 */
 	private long wechatAuthId;
-	//微信的ID
+	/**
+	 * 微信的ID
+	 */
 	private String openId;
-	//创建时间
+	/**
+	 * 创建时间
+	 */
 	private Date createTime;
-	
+	/**
+	 * 用户的实体类
+	 */
 	private PersonInfo personInfo;
 
 	public long getWechatAuthId() {

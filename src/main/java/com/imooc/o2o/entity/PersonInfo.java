@@ -9,23 +9,41 @@ import java.util.Date;
  *
  */
 public class PersonInfo {
-	// 用户id
+	/**
+	 * 用户id
+	 */
 	private Long userId;
-	// 用户姓名
+	/**
+	 * 用户姓名
+	 */
 	private String name;
-	// 头像地址
+	/**
+	 * 头像地址
+	 */
 	private String profileImg;
-	// 邮箱
+	/**
+	 * 邮箱
+	 */
 	private String email;
-	// 性别
+	/**
+	 * 性别
+ 	 */
 	private String gender;
-	// 账户状态 0表示禁止使用,1表示允许使用本商城
+	/**
+	 * 账户状态 0表示禁止使用,1表示允许使用本商城
+	 */
 	private Integer enableStatus;
-	// 身份标识 1.代表顾客 2.代表店家 3.代表超级管理员
+	/**
+	 * 身份标识 1.代表顾客 2.代表店家 3.代表超级管理员
+	 */
 	private Integer userType;
-	// 用户的身份标识
+	/**
+	 * 用户的身份标识
+	 */
 	private Date createTime;
-	// 最后一次操作时间
+	/**
+	 * 最后一次操作时间
+	 */
 	private Date lastEditTime;
 
 	public Long getUserId() {

@@ -8,6 +8,10 @@ import org.springframework.stereotype.Service;
 import com.imooc.o2o.dao.AreaDao;
 import com.imooc.o2o.entity.Area;
 import com.imooc.o2o.service.AreaService;
+/**
+ * @author 阳斌
+ * @version 2018/4/1
+ */
 @Service
 public class AreaServiceImpl implements AreaService{
 	@Autowired

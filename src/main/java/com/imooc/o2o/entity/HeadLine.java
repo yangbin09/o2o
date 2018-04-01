@@ -9,21 +9,37 @@ import java.util.Date;
  *
  */
 public class HeadLine {
-	// ID
+	/**
+	 * ID
+ 	 */
 	private Long lineId;
-	// 名字
+	/**
+	 * 名字
+	 */
 	private String lineName;
-	// 链接地址
+	/**
+	 * 链接地址
+	 */
 	private String lineLink;
-	// 图片地址
+	/**
+	 * 图片地址
+	 */
 	private Integer lineImg;
-	// 权重
+	/**
+	 * 权重
+	 */
 	private Integer priority;
-	// 0.不可用 1.可用
+	/**
+	 * 0.不可用 1.可用
+	 */
 	private String enableStatus;
-	// 创建时间
+	/**
+	 * 	创建时间
+	 */
 	private Date createTime;
-	// 修改时间
+	/**
+	 * 修改时间
+	 */
 	private Date lastEditTime;
 
 	public Long getLineId() {
