@@ -1,0 +1,7 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea/artifacts/
+.idea/compiler.xml
+.idea/libraries/
+.idea/workspace.xml
+target/
+catalina.base_IS_UNDEFINED/

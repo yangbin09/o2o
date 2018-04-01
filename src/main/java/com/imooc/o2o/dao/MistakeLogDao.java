@@ -14,6 +14,7 @@ public interface MistakeLogDao {
      *
      * @param mistakeLog 错误信息的类
      * @return 返回成功或者失败
+     *
      */
     int inserteLog(MistakeLog mistakeLog);
 }
