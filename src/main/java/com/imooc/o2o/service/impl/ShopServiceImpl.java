@@ -49,7 +49,6 @@ public class ShopServiceImpl implements ShopService {
 			int effectedNum = shopdao.insertShop(shop);
 
 			if (effectedNum <= 0) {
-				addshopmistakeLog("店铺创建失败 ");
 				throw new ShopOperationException("店铺创建失败 ");
 			} else {
 				if (shopImgInputStream != null) {
@@ -57,13 +56,11 @@ public class ShopServiceImpl implements ShopService {
 					try {
 						addShopImg(shop, shopImgInputStream, fileName);
 					} catch (Exception e) {
-						addshopmistakeLog("addShopImg error");
 						throw new ShopOperationException("addShopImg error:" + e.getMessage());
 					}
 					// 更新店铺的图片地址
 					effectedNum = shopdao.updateShop(shop);
 					if (effectedNum <= 0) {
-						addshopmistakeLog("更新图片地址失败！ ");
 						throw new ShopOperationException("更新图片地址失败！");
 					}
 				}
@@ -72,7 +69,7 @@ public class ShopServiceImpl implements ShopService {
 		} catch (Exception e) {
 			throw new RuntimeException("addShop error:" + e.getMessage());
 		}
-
+		addShopmistakeLog("店铺创建成功",shop.getOwner().getName());
 		return new ShopExecution(ShopStateEnum.CHECK, shop);
 	}
 
@@ -87,13 +84,14 @@ public class ShopServiceImpl implements ShopService {
 	/**
 	 * 如果发生错误记录错误原因
 	 * 
-	 * @param string
+	 * @param string 日志消息
+	 * @param name    操作的人
 	 */
-	private void addshopmistakeLog(String string) {
+	private void addShopmistakeLog(String string,String name) {
 		MistakeLog mistakeLog = new MistakeLog();
 		mistakeLog.setCreateTime(new Date());
 		mistakeLog.setMistakeCause(string);
-		mistakeLog.setRamarks("不知道");
+		mistakeLog.setRamarks(name);
 		mistakeLog.setTableName("tb_shop");
 
 		mistakeLogService.addMistakeLog(mistakeLog);

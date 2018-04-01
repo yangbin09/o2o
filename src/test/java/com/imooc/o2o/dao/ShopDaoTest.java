@@ -33,9 +33,8 @@ public class ShopDaoTest extends BaseTest {
 	}
 	
 	@Test
-	@Ignore
 	public void testQueryByShopId(){
-		long shopId=73L;
+		long shopId=29L;
 		Shop shop = shopDao.queryByShopId(shopId);
 		System.out.println("Id: "+shop.getArea().getAreaId());
 		System.out.println("区域: "+shop.getArea().getAreaName());
@@ -83,6 +82,7 @@ public class ShopDaoTest extends BaseTest {
 
 	}
 	@Test
+	@Ignore
 	public void testid(){
 		Shop id = shopDao.queryByShopId(28);
 		System.out.println(id);

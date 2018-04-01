@@ -5,7 +5,12 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 import com.imooc.o2o.entity.Shop;
-
+/**
+ * @author 阳斌
+ * @date   2018/4/1 15:13
+ * E-mail  1692207904@qq.com
+ * 说明：   店铺管理的dao
+ */
 public interface ShopDao {
 	
 	/**

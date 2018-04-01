@@ -4,7 +4,8 @@ import java.util.Date;
 
 /**
  * @author 作者 E-mail: 百年叔叔 1692207904@qq.com
- * @version 创建时间：2017年12月30日 下午12:40:56 类说明 ：错误日志整理类
+ * @version 创建时间：2017年12月30日 下午12:40:56
+ * 类说明 ：错误日志整理类
  */
 
 public class MistakeLog {
@@ -17,11 +18,11 @@ public class MistakeLog {
      */
 	private Date createTime;
     /**
-     * 发生错误的表名
+     * 发生操作的表名
       */
 	private String tableName;
     /**
-     *    错误的原因
+     *  原因
      */
 	private String mistakeCause;
     /**

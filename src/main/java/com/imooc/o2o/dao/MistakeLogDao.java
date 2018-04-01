@@ -5,14 +5,15 @@ import com.imooc.o2o.entity.Shop;
 
 /**
  * @author 作者 E-mail: 百年叔叔 1692207904@qq.com
- * @version 创建时间：2017年12月30日 下午12:48:01 类说明 ：
+ * @version 创建时间：2017年12月30日 下午12:48:01
+ * 类说明 ：
  */
-
 public interface MistakeLogDao {
-	/**
-	 * 新增错误信息
-	 * @param mistakeLog 错误信息的类
-	 * @return 返回成功或者失败
-	 */
-	int inserteLog(MistakeLog mistakeLog);
+    /**
+     * 新增错误信息
+     *
+     * @param mistakeLog 错误信息的类
+     * @return 返回成功或者失败
+     */
+    int inserteLog(MistakeLog mistakeLog);
 }
